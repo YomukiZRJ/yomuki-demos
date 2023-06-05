@@ -14,6 +14,7 @@ export default defineConfig({
   },
   rules: [
     [/^ww-([.\d]+)$/, ([_, num]) => ({ width: `${num}vw` })],
-    [/^hh-([.\d]+)$/, ([_, num]) => ({ height: `${num}vh` })]
+    [/^hh-([.\d]+)$/, ([_, num]) => ({ height: `${num}vh` })],
+    [/^max-hh-([.\d]+)$/, ([_, num]) => ({ 'max-height': `${num}vh` })]
   ]
 })

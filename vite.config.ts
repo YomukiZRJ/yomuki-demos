@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import UnoCSS from 'unocss/vite'
+import { presetIcons } from 'unocss'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,7 +29,7 @@ export default defineConfig({
         },
         {
           from: 'vue-router',
-          imports: ['RouteRecordRaw'],
+          imports: ['RouteRecordRaw', 'RouteRecordName'],
           type: true
         }
       ],
@@ -53,6 +54,13 @@ export default defineConfig({
        * 原子化css插件
        * @see https://unocss.dev/guide/
        */
-    UnoCSS()
+    UnoCSS({
+      presets: [
+        presetIcons({
+          cdn: 'https://esm.sh/'
+          // collections: { linemd: () => import('@iconify-json/line-md/icons.json', { assert: { type: 'json' } }).then(i => i.default) }
+        })
+      ]
+    })
   ]
 })

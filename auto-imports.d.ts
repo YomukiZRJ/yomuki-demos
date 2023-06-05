@@ -57,6 +57,7 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useDocTitle: typeof import('./src/hooks/useDocTitle')['default']
   const useGui: typeof import('./src/hooks/useGui')['default']
   const useLink: typeof import('vue-router')['useLink']
   const useRoute: typeof import('vue-router')['useRoute']
@@ -72,5 +73,5 @@ declare global {
   // @ts-ignore
   export type { Component, ComponentPublicInstance, ComputedRef, InjectionKey, PropType, Ref, VNode } from 'vue'
   // @ts-ignore
-  export type { RouteRecordRaw } from 'vue-router'
+  export type { RouteRecordRaw, RouteRecordName } from 'vue-router'
 }

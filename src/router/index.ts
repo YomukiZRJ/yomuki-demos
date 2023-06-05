@@ -1,5 +1,6 @@
 import animejsRoutes from './routes/animejs'
 // 路由匹配@see https://paths.esm.dev/?p=AAMeJSyAwR4UbFDAFxAcAGAIJXMAAA..&t=/
+const menuRouts: MenuRoute[] = [animejsRoutes]
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
@@ -10,10 +11,14 @@ const routes: RouteRecordRaw[] = [
     name: 'NotFound',
     component: () => import('@/pages/not-found/index.vue')
   },
-  animejsRoutes
+  ...menuRouts
 ]
 const router = createRouter({
   history: createWebHistory(),
   routes
 })
 export default router
+
+export {
+  menuRouts
+}

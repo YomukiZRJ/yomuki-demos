@@ -1,6 +1,9 @@
-const route: RouteRecordRaw = {
+const route: MenuRoute = {
   path: '/animejs',
   name: 'Animejs',
+  meta: {
+    title: 'Animejs'
+  },
   children: [
     {
       path: 'svg-path',

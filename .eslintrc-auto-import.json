@@ -69,6 +69,8 @@
     "watchPostEffect": true,
     "watchSyncEffect": true,
     "createWebHistory": true,
-    "useGui": true
+    "useGui": true,
+    "useDocTitle": true,
+    "RouteRecordName": true
   }
 }

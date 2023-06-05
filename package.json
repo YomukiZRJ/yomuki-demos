@@ -17,6 +17,7 @@
     "vue-router": "4"
   },
   "devDependencies": {
+    "@iconify-json/line-md": "^1.1.24",
     "@types/animejs": "^3.1.7",
     "@types/node": "^20.2.5",
     "@unocss/preset-uno": "^0.52.7",

@@ -5,5 +5,6 @@ useDocTitle()
 </script>
 
 <template>
+  <operation-panel />
   <router-view />
 </template>
