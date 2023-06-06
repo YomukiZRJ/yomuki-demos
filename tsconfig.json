@@ -20,8 +20,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@": ["src"],
-      "@/*": ["src/*"]
+      "@": ["./src"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "./auto-imports.d.ts", "./components.d.ts", "types/**/*.d.ts"],

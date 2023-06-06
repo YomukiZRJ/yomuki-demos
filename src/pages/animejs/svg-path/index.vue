@@ -5,7 +5,7 @@ useSvgPath()
 </script>
 
 <template>
-  <div class="ww-100 hh-100 flex items-center justify-center bg-black">
+  <div class="center-full-page">
     <svg
       viewBox="0 0 500 300"
       xmlns="http://www.w3.org/2000/svg"

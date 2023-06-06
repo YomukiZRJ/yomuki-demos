@@ -1,5 +1,4 @@
-import { defineConfig } from 'unocss'
-import presetUno from '@unocss/preset-uno'
+import { defineConfig, presetIcons, presetUno } from 'unocss'
 export default defineConfig({
   presets: [
     /**
@@ -7,14 +6,18 @@ export default defineConfig({
      * @see https://unocss.dev/presets/uno
      * @doc https://tailwindcss.com/docs/installation
      */
-    presetUno()
+    presetUno(),
+    presetIcons({
+      cdn: 'https://esm.sh/'
+    })
   ],
   theme: {
 
   },
+  shortcuts: {
+    'center-full-page': 'w-100vw h-100vh bg-black flex items-center justify-center'
+  },
   rules: [
-    [/^ww-([.\d]+)$/, ([_, num]) => ({ width: `${num}vw` })],
-    [/^hh-([.\d]+)$/, ([_, num]) => ({ height: `${num}vh` })],
     [/^max-hh-([.\d]+)$/, ([_, num]) => ({ 'max-height': `${num}vh` })]
   ]
 })
