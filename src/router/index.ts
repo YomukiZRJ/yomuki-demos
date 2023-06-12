@@ -1,7 +1,8 @@
 import animejsRoutes from './routes/animejs'
 import cssRoutes from './routes/css'
+import threeRoutes from './routes/threejs'
 // 路由匹配@see https://paths.esm.dev/?p=AAMeJSyAwR4UbFDAFxAcAGAIJXMAAA..&t=/
-const menuRouts: MenuRoute[] = [animejsRoutes, cssRoutes]
+const menuRouts: MenuRoute[] = [animejsRoutes, cssRoutes, threeRoutes]
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
