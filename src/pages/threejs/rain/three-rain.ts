@@ -1,5 +1,5 @@
 import { useWindowSize } from '@vueuse/core'
-import { AxesHelper, BoxGeometry, Clock, LoadingManager, MathUtils, Mesh, MeshBasicMaterial, MeshPhongMaterial, MirroredRepeatWrapping, PerspectiveCamera, PlaneGeometry, PointLight, PointLightHelper, RectAreaLight, RepeatWrapping, Scene, TextureLoader, Vector2, WebGLRenderer } from 'three'
+import { BoxGeometry, Clock, LoadingManager, MathUtils, Mesh, MeshBasicMaterial, MeshPhongMaterial, MirroredRepeatWrapping, PerspectiveCamera, PlaneGeometry, PointLight, PointLightHelper, RectAreaLight, RepeatWrapping, Scene, TextureLoader, Vector2, WebGLRenderer } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // 文字插件
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
@@ -70,19 +70,19 @@ export default (el: HTMLCanvasElement) => {
   }
   const textureLoader = new TextureLoader(loadManager)
   // 青沥法向量纹理
-  const asphaltNormalTexture = textureLoader.load('http://assets.yomuki.com/texture/Asphalt_001/Asphalt_001_NRM.jpg')
+  const asphaltNormalTexture = textureLoader.load('//assets.yomuki.com/texture/Asphalt_001/Asphalt_001_NRM.jpg')
   // 地板法向量纹理
-  const floorNormalTexture = textureLoader.load('http://assets.yomuki.com/texture/Ground_Wet_002_SD/Ground_Wet_002_normal.jpg')
+  const floorNormalTexture = textureLoader.load('//assets.yomuki.com/texture/Ground_Wet_002_SD/Ground_Wet_002_normal.jpg')
   // 地板粗糙度纹理
-  const floorRoughnessTexture = textureLoader.load('http://assets.yomuki.com/texture/Ground_Wet_002_SD/Ground_Wet_002_roughness.jpg')
+  const floorRoughnessTexture = textureLoader.load('//assets.yomuki.com/texture/Ground_Wet_002_SD/Ground_Wet_002_roughness.jpg')
   // 地板透明度纹理
-  const floorAlphaTexture = textureLoader.load('http://assets.yomuki.com/texture/Ground_Wet_002_SD/Ground_Wet_002_mask.jpg')
+  const floorAlphaTexture = textureLoader.load('//assets.yomuki.com/texture/Ground_Wet_002_SD/Ground_Wet_002_mask.jpg')
   // 雨滴法向量纹理
-  const rainNormalTexture = textureLoader.load('http://assets.yomuki.com/texture/Rain_001/rain-normal.png')
+  // const rainNormalTexture = textureLoader.load('http://assets.yomuki.com/texture/Rain_001/rain-normal.png')
   // 文字 @see http://gero3.github.io/facetype.js/
   let font: Font | null = null
   const fontLoader = new FontLoader(loadManager)
-  fontLoader.load('http://yomuki-assets.oss-cn-hangzhou.aliyuncs.com/webgl_font/Verdana_Bold_Italic.json', (responseFont) => {
+  fontLoader.load('//assets.yomuki.com/webgl_font/Verdana_Bold_Italic.json', (responseFont) => {
     font = responseFont
   })
 
@@ -383,11 +383,11 @@ export default (el: HTMLCanvasElement) => {
  * 动画
  */
   const clock = new Clock()
-  let oldTime = 0
+  // let oldTime = 0
   const tick = () => {
     const elapsedTime = clock.getElapsedTime()
-    const deltaTime = elapsedTime - oldTime
-    oldTime = elapsedTime
+    // const deltaTime = elapsedTime - oldTime
+    // oldTime = elapsedTime
     // 更新材质
     if (floorMaterial)
       floorMaterial.uniforms.uTime.value = elapsedTime

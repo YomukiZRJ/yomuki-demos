@@ -41,17 +41,17 @@ section {
   position: relative;
 }
 section:nth-child(1){
-  background: url(http://assets.yomuki.com/imgs/xb2/2022042318321200-ECCAE210FD0AA1E799B6F807E179FB9A.jpg) no-repeat center center;
+  background: url(//assets.yomuki.com/imgs/xb2/2022042318321200-ECCAE210FD0AA1E799B6F807E179FB9A.jpg) no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
 }
 section:nth-child(2){
-  background: url(http://assets.yomuki.com/imgs/xb2/2022042318323100-ECCAE210FD0AA1E799B6F807E179FB9A.jpg) no-repeat center center;
+  background: url(//assets.yomuki.com/imgs/xb2/2022042318323100-ECCAE210FD0AA1E799B6F807E179FB9A.jpg) no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
 }
 section:nth-child(3){
-  background: url(http://assets.yomuki.com/imgs/xb2/2022051321143000-ECCAE210FD0AA1E799B6F807E179FB9A.jpg) no-repeat center center;
+  background: url(//assets.yomuki.com/imgs/xb2/2022051321143000-ECCAE210FD0AA1E799B6F807E179FB9A.jpg) no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
 }
