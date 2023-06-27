@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import { menuRouts } from '@/router'
+const emits = defineEmits(['menu-click'])
 const router = useRouter()
-
 const toRoute = (name: RouteRecordName) => {
+  emits('menu-click')
   router.push({ name })
 }
 </script>

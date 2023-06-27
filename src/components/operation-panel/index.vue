@@ -3,6 +3,9 @@ const isShowMenu = ref(false)
 const handleState = () => {
   isShowMenu.value = !isShowMenu.value
 }
+const handleMenuClick = () => {
+  isShowMenu.value = false
+}
 </script>
 
 <template>
@@ -17,7 +20,10 @@ const handleState = () => {
       />
     </div>
     <Transition>
-      <menu-panel v-if="isShowMenu" />
+      <menu-panel
+        v-if="isShowMenu"
+        @menu-click="handleMenuClick"
+      />
     </Transition>
   </Teleport>
 </template>
