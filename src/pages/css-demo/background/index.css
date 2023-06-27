@@ -1,0 +1,340 @@
+/* demo1 */
+.background-demo-1 {
+  position: relative;
+  background: #000;
+}
+
+.background-demo-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(to right, transparent, #000);
+  pointer-events: none;
+  /* 防止遮挡点击事件 */
+}
+
+/* demo2 */
+.background-demo-2 {
+  background:
+    linear-gradient(45deg, transparent 15px, pink 0),
+    linear-gradient(-45deg, transparent 15px, pink 0),
+    linear-gradient(135deg, transparent 15px, pink 0),
+    linear-gradient(-135deg, transparent 15px, pink 0);
+  background-size: 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+  background-position:
+    bottom left,
+    bottom right,
+    top left,
+    top right;
+  background-repeat: no-repeat;
+}
+
+/* demo3 */
+.background-demo-3 {
+  /* 预留衔接空间消除渐变产生的锯 */
+  background: repeating-linear-gradient(45deg, transparent, transparent 20px, pink 20.5px, pink 30px, transparent 30.5px);
+}
+
+/* demo4 */
+.background-demo-4 {
+  position: relative;
+  background: linear-gradient(to right, #b04458 60%, #c66c7c);
+}
+
+/* demo4 */
+.background-demo-4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: radial-gradient(circle at 17px 12.5px, #000 12px, transparent 12.5px);
+  background-size: 20px 35px;
+  background-repeat: repeat-y;
+  pointer-events: none;
+}
+
+.background-demo-4::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle at 0px center, transparent 12px, #000 13px, #000 20px);
+  background-repeat: repeat-y;
+  pointer-events: none;
+}
+
+/* demo5 */
+.background-demo-5 {
+  position: relative;
+}
+
+.background-demo-5::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 20px;
+  background:
+    radial-gradient(circle at 10px -7px, transparent 8px, currentColor 8px, currentColor 9px, transparent 9px) repeat-x,
+    radial-gradient(circle at 10px 27px, transparent 8px, currentColor 8px, currentColor 9px, transparent 9px) repeat-x;
+  background-size: 20px 20px;
+  background-position: -10px calc(100% + 16px), 0 calc(100% - 4px);
+}
+
+.background-demo-5:hover::after {
+  animation: waveFlow 1s infinite linear;
+}
+
+@keyframes waveFlow {
+  from {
+    background-position-x: -10px, 0;
+  }
+
+  to {
+    background-position-x: -30px, -20px;
+  }
+}
+
+/* demo6 */
+.background-demo-6 {
+  background: linear-gradient(to right, #9e1316 0%, #c66c7c 50%, #f2c6e2);
+  background-size: 200% 100%;
+  background-position: 0 0;
+  animation: demo6 3s infinite linear alternate;
+}
+
+@keyframes demo6 {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* demo7 */
+.background-demo-7 {
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  z-index: 0;
+}
+
+.background-demo-7::before {
+  content: '';
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, #9e1316 0%, #c66c7c 50%, #f2c6e2);
+  z-index: -1;
+  animation: demo7 3s infinite linear alternate;
+}
+
+@keyframes demo7 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* demo8 */
+.background-demo-8 {
+  background: linear-gradient(to right, #9e1316 0%, #c66c7c 50%, #f2c6e2);
+  animation: demo8 3s infinite linear alternate;
+}
+
+@keyframes demo8 {
+  0% {
+    filter: hue-rotate(0);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* demo9 */
+@property --colorA {
+  syntax: '<color>';
+  initial-value: #9e1316;
+  inherits: false;
+}
+
+@property --colorB {
+  syntax: '<color>';
+  initial-value: #c66c7c;
+  inherits: false;
+}
+
+@property --colorC {
+  syntax: '<color>';
+  initial-value: #f2c6e2;
+  inherits: false;
+}
+
+.background-demo-9 {
+  background: linear-gradient(to right, var(--colorA) 0%, var(--colorB) 50%, var(--colorC));
+  animation: demo9 9s infinite linear alternate;
+}
+
+@keyframes demo9 {
+  0% {
+    --colorA: #9e1316;
+    --colorB: #c66c7c;
+    --colorC: #f2c6e2;
+  }
+
+  25% {
+    --colorA: #c66c7c;
+    --colorB: #f2c6e2;
+    --colorC: #9e1316;
+  }
+
+  50% {
+    --colorA: #f2c6e2;
+    --colorB: #9e1316;
+    --colorC: #c66c7c;
+  }
+
+  75% {
+    --colorA: #9e1316;
+    --colorB: #c66c7c;
+    --colorC: #f2c6e2;
+  }
+
+  100% {
+    --colorA: #c66c7c;
+    --colorB: #f2c6e2;
+    --colorC: #9e1316;
+  }
+}
+
+/* demo10 */
+.background-demo-10 {
+  padding: 10px;
+  background:
+    linear-gradient(to right, #000, #000),
+    conic-gradient(from 0deg,
+      hsl(360, 100%, 50%),
+      hsl(315, 100%, 50%),
+      hsl(270, 100%, 50%),
+      hsl(225, 100%, 50%),
+      hsl(180, 100%, 50%),
+      hsl(135, 100%, 50%),
+      hsl(90, 100%, 50%),
+      hsl(45, 100%, 50%),
+      hsl(0, 100%, 50%));
+  background-clip: content-box, padding-box;
+}
+
+/* demo11 */
+.background-demo-11 {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background-demo-11::before {
+  content: '';
+  position: absolute;
+  padding: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  background:
+    conic-gradient(from 0deg,
+      hsl(360, 100%, 50%),
+      hsl(315, 100%, 50%),
+      hsl(270, 100%, 50%),
+      hsl(225, 100%, 50%),
+      hsl(180, 100%, 50%),
+      hsl(135, 100%, 50%),
+      hsl(90, 100%, 50%),
+      hsl(45, 100%, 50%),
+      hsl(0, 100%, 50%));
+  z-index: -1;
+  animation: demo11 3s infinite linear;
+}
+
+.background-demo-11::after {
+  content: '';
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  box-sizing: border-box;
+  background: #000;
+  background-clip: content-box;
+}
+
+@keyframes demo11 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* demo12 */
+.background-demo-12 {
+  color: transparent;
+  background: linear-gradient(to right, #9e1316 0%, #c66c7c 50%, #f2c6e2);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* demo13 */
+.background-demo-13 {
+  display: inline;
+  color: transparent;
+  background: linear-gradient(90deg, #c66c7c, #f2c6e2 96%, transparent);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* demo14 */
+.background-demo-14>span {
+  color: #f2c6e2;
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(to right, #9e1316 0%, #c66c7c 50%, #f2c6e2);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1s ease-in-out;
+}
+
+.background-demo-14>span:hover {
+  background-size: 100% 3px;
+}
+
+/* demo15 */
+.background-demo-15 {
+  background:
+    linear-gradient(to bottom, #000 0%, transparent 10px),
+    linear-gradient(to bottom, #9e1316 0%, transparent 10px);
+  background-attachment: local, scroll;
+}

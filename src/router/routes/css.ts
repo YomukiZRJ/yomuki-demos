@@ -20,6 +20,22 @@ const route: MenuRoute = {
       meta: {
         title: 'css-switch-btn'
       }
+    },
+    {
+      path: 'background',
+      name: 'CssBackground',
+      component: () => import('@/pages/css-demo/background/index.vue'),
+      meta: {
+        title: 'css-background'
+      }
+    },
+    {
+      path: 'background-attachment',
+      name: 'CssBackgroundAttachment',
+      component: () => import('@/pages/css-demo/background/background-attachment.vue'),
+      meta: {
+        title: 'css-background-attachment-视觉差'
+      }
     }
   ]
 }
