@@ -36,6 +36,14 @@ const route: MenuRoute = {
       meta: {
         title: 'css-background-attachment-视觉差'
       }
+    },
+    {
+      path: 'mask',
+      name: 'CssMask',
+      component: () => import('@/pages/css-demo/mask/index.vue'),
+      meta: {
+        title: 'css-mask'
+      }
     }
   ]
 }

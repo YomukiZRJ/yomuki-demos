@@ -1,0 +1,102 @@
+/* demo1 */
+.mask-demo-1 {
+  background: red;
+  mask: linear-gradient(90deg, transparent, #000);
+  -webkit-mask: linear-gradient(90deg, transparent, #000);
+}
+
+/* demo2 */
+.mask-demo-2 {
+  mask: linear-gradient(45deg, transparent 15px, #000 0)bottom left,
+    linear-gradient(-45deg, transparent 15px, #000 0)bottom right,
+    linear-gradient(135deg, transparent 15px, #000 0)top left,
+    linear-gradient(-135deg, transparent 15px, #000 0)top right;
+  -webkit-mask: linear-gradient(45deg, transparent 15px, #000 0)bottom left,
+    linear-gradient(-45deg, transparent 15px, #000 0)bottom right,
+    linear-gradient(135deg, transparent 15px, #000 0)top left,
+    linear-gradient(-135deg, transparent 15px, #000 0)top right;
+  mask-size: 50% 50%;
+  -webkit-mask-size: 50% 50%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+/* demo3 */
+.mask-demo-3 {
+  mask: linear-gradient(to left,transparent ,#000 10px);
+  -webkit-mask: linear-gradient(to left,transparent ,#000 100px);
+}
+/* demo4 */
+.mask-demo-4 {
+  position: relative;
+  background: url(//assets.yomuki.com/imgs/xb2/2022051722333800-ECCAE210FD0AA1E799B6F807E179FB9A.jpg) center center;
+  background-size: 100% 100%;
+}
+.mask-demo-4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(//assets.yomuki.com/imgs/xb2/2022051722003000-ECCAE210FD0AA1E799B6F807E179FB9A.jpg) center center;
+  background-size: 100% 100%;
+  mask:linear-gradient(45deg,transparent 40%,#000 60%);
+  -webkit-mask: linear-gradient(45deg,transparent 40%,#000 60%);
+}
+/* demo5 */
+.mask-demo-5 > div {
+  width: 100px;
+  aspect-ratio: 1/1;
+  background-color: pink;
+  display: flex;
+  align-items: end;
+  mask: radial-gradient(circle at 100% 0, transparent 68%,#000 calc(68% + 1px)),
+  radial-gradient(circle at 0 0, transparent 68%,#000 calc(68% + 1px));
+  -webkit-mask: radial-gradient(circle at 100% 0, transparent 68%,#000 calc(68% + 1px)),
+  radial-gradient(circle at 0 0, transparent 68%,#000 calc(68% + 1px));
+}
+.mask-demo-5 > div:nth-child(1) {
+  mask-composite: add;
+}
+.mask-demo-5 > div:nth-child(2) {
+  mask-composite: subtract;
+}
+.mask-demo-5 > div:nth-child(3) {
+  mask-composite: intersect;
+}
+.mask-demo-5 > div:nth-child(4) {
+  mask-composite: exclude;
+}
+.mask-demo-5 > div:nth-child(5) {
+  -webkit-mask-composite: clear;
+}
+.mask-demo-5 > div:nth-child(6) {
+  -webkit-mask-composite: copy;
+}
+.mask-demo-5 > div:nth-child(7) {
+  -webkit-mask-composite: source-over;
+}
+.mask-demo-5 > div:nth-child(8) {
+  -webkit-mask-composite: source-in;
+}
+.mask-demo-5 > div:nth-child(9) {
+  -webkit-mask-composite: source-out;
+}
+.mask-demo-5 > div:nth-child(10) {
+  -webkit-mask-composite: source-atop;
+}
+.mask-demo-5 > div:nth-child(11) {
+  -webkit-mask-composite: destination-over;
+}
+.mask-demo-5 > div:nth-child(12) {
+  -webkit-mask-composite: destination-in;
+}
+.mask-demo-5 > div:nth-child(13) {
+  -webkit-mask-composite: destination-out;
+}
+.mask-demo-5 > div:nth-child(14) {
+  -webkit-mask-composite: destination-atop;
+}
+.mask-demo-5 > div:nth-child(15) {
+  -webkit-mask-composite: xor;
+}
