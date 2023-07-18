@@ -44,6 +44,14 @@ const route: MenuRoute = {
       meta: {
         title: 'css-mask'
       }
+    },
+    {
+      path: 'clip-path',
+      name: 'CssClipPath',
+      component: () => import('@/pages/css-demo/clip-path/index.vue'),
+      meta: {
+        title: 'clip-path'
+      }
     }
   ]
 }

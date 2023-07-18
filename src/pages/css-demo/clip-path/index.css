@@ -1,0 +1,262 @@
+.clip-path-demo {
+  --bg-img: url(//assets.yomuki.com/imgs/xb2/2022051321161000-ECCAE210FD0AA1E799B6F807E179FB9A.jpg);
+}
+
+.demo-1 {
+  position: relative;
+  filter:
+    drop-shadow(0 0 .5px #fff) drop-shadow(0 0 .5px #fff) drop-shadow(0 0 .5px #fff) drop-shadow(0 0 20px rgba(214, 37, 37, 1));
+}
+
+.demo-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-img) no-repeat center center / cover;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 50% 100%, 0% 25%);
+}
+
+.demo-4 {
+  position: relative;
+  background: #fff;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 50% 100%, 0% 25%);
+}
+
+.demo-4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-img) no-repeat center center / cover;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 50% 100%, 0% 25%);
+  transform: scale(0.98);
+}
+
+.demo-2 {
+  display: grid;
+  grid-template-columns: 1fr .7fr 0.3fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
+  gap: 0px 0px;
+  justify-content: space-around;
+  align-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  width: 600px;
+  height: 800px;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.demo-2>div:nth-child(1) {
+  grid-area: 1 / 1 / 2 / 2;
+  clip-path: polygon(0% 0%, 100% 0%, 120% 120%, 0% 100%);
+}
+
+.demo-2>div:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 4;
+  clip-path: polygon(0% 0%, 100% 0%, 80% 120%, 20% 120%);
+}
+
+.demo-2>div:nth-child(3)>img {
+  margin-left: -20%;
+}
+
+.demo-2>div:nth-child(3) {
+  grid-area: 1 / 4 / 2 / 5;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, -20% 120%);
+}
+
+.demo-2>div:nth-child(4)>img {
+  width: 130%;
+}
+
+.demo-2>div:nth-child(4) {
+  grid-area: 2 / 1 / 3 / 2;
+  clip-path: polygon(0% 0%, 120% 10%, 130% 50%, 120% 90%, 0% 100%);
+}
+
+.demo-2>div:nth-child(5) {
+  grid-area: 2 / 2 / 4 / 5;
+  clip-path: polygon(10% 7%, 40% 7%, 100% 0%, 100% 95%, 52% 100%, 52% 54%, 10% 59.1%, 14.3% 32.5%);
+}
+
+.demo-2>div:nth-child(6)>img {
+  margin-top: -20%;
+  height: 160%;
+}
+
+.demo-2>div:nth-child(6) {
+  grid-area: 3 / 1 / 4 / 2;
+  clip-path: polygon(0% 0%, 120% -20%, 120% 115%, 0% 100%);
+}
+
+.demo-2>div:nth-child(7) {
+  grid-area: 4 / 1 / 5 / 2;
+  clip-path: polygon(0% 0%, 120% 15%, 120% 100%, 0% 100%);
+}
+
+.demo-2>div:nth-child(8) {
+  grid-area: 4 / 2 / 5 / 3;
+  clip-path: polygon(30% 15%, 100% 5%, 100% 100%, 30% 100%);
+}
+
+.demo-2>div:nth-child(9)>img {
+  margin-top: -20%;
+  height: 140%;
+}
+
+.demo-2>div:nth-child(9) {
+  grid-area: 4 / 3 / 5 / 5;
+  clip-path: polygon(0% 5%, 100% -15%, 100% 100%, 0% 100%);
+}
+
+.demo-2>div:nth-child(10)>img {
+  margin-top: -30%;
+  height: 160%;
+}
+
+.demo-2>div:nth-child(10) {
+  grid-area: 3 / 2 / 4 / 4;
+  clip-path: polygon(20% -20%, 100% -35%, 100% 100%, 20% 115%);
+}
+
+.demo-2>div>img {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.demo-2>div>img:hover {
+  transform: scale(1.5);
+}
+
+.demo-3 {
+  overflow: hidden;
+  clip-path: polygon(50% 0%, 49.7% 0%, 100% 99.3%, 0.4% 100%, 49.7% 0%);
+  animation: clipPath 4s infinite alternate;
+}
+
+@keyframes clipPath {
+  0%, 5% {
+    clip-path: polygon(50% 0%, 49.7% 0%, 100% 99.3%, 0.4% 100%, 49.7% 0%);
+  }
+
+  50%, 55% {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 50% 100%, 0% 25%);
+  }
+
+  95%, 100% {
+    clip-path: polygon(50% 0%, 100% 44%, 82% 100%, 18% 100%, 0% 44%);
+  }
+}
+
+.demo-5 {
+  /* background: pink; */
+  position: relative;
+}
+
+.demo-5::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid gold;
+  /* background: yellow; */
+  animation: clipPathInset 3s infinite linear;
+  border-radius: 10px;
+}
+
+@keyframes clipPathInset {
+  0%, 100% {
+    clip-path: inset(calc(100% - 5px) 0 0 0)
+  }
+
+  25% {
+    clip-path: inset(0 calc(100% - 5px) 0 0);
+  }
+
+  50% {
+    clip-path: inset(0 0 calc(100% - 5px) 0);
+  }
+
+  75% {
+    clip-path: inset(0 0 0 calc(100% - 5px));
+  }
+}
+
+.demo-6 {
+  background: pink;
+  position: relative;
+}
+
+.demo-6::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid gold;
+  /* background:yellow ; */
+  animation: clipPathInset2 3s infinite linear;
+  box-sizing: border-box;
+}
+
+@keyframes clipPathInset2 {
+  0%, 100% {
+    clip-path: inset(calc(100% - 5px) 0 0 0)
+  }
+
+  25% {
+    clip-path: inset(0 calc(100% - 5px) 0 0);
+  }
+
+  50% {
+    clip-path: inset(0 0 calc(100% - 5px) 0);
+  }
+
+  75% {
+    clip-path: inset(0 0 0 calc(100% - 5px));
+  }
+}
+
+
+.demo-7 {
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 36px;
+  transform: rotate(355deg);
+}
+
+.demo-7>span {
+  clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+}
+
+.demo-7::after,
+.demo-7::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.demo-7::after {
+  clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+  transform: translate(-10px, 10px);
+}
+
+.demo-7::before {
+  clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+  transform: translate(10px, -10px);
+}
