@@ -1,0 +1,169 @@
+.demo-1 {
+  position: relative;
+  border: 1px solid #c57070;
+}
+
+.demo-1::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 50px 50px -50px #c57070;
+  clip-path: polygon(-100% 100%, 200% 100%, 200% 500%, -100% 500%);
+}
+
+.demo-2 {
+  --radius: 10px;
+  --bg-color: hsl(350deg, 100%, 88%);
+  --shadow-color: hsl(350deg, 100%, 80%);
+  position: relative;
+  clip-path: polygon(0% 0, 100% 0, 200% 300%, 0% 300%);
+}
+
+.demo-2::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 70%;
+  height: 100%;
+  border-radius: var(--radius);
+  background: var(--shadow-color);
+  transform: rotate(356deg);
+  /* box-shadow: 0 0 10px 5px var(--shadow-color); */
+  filter: blur(5px);
+}
+
+.demo-2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: var(--bg-color);
+}
+
+.demo-3 {
+  position: relative;
+}
+
+.demo-3::before,
+.demo-3::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  bottom: 0;
+  background: hsl(206.31deg 70.21% 49.38%);
+  filter: blur(5px);
+}
+
+.demo-3::before {
+  transform: translate(-10px, -5px) rotate(354deg);
+}
+
+.demo-3::after {
+  transform: translate(10px, -5px) rotate(6deg);
+}
+
+.demo-4 {
+  position: relative;
+  background: url(//assets.yomuki.com/imgs/xb2/2022051321161000-ECCAE210FD0AA1E799B6F807E179FB9A.jpg) no-repeat center center / cover;
+  border-radius: 50%;
+}
+
+.demo-4::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  filter: blur(10px) brightness(80%) opacity(.8);
+  transform: scale(.9);
+  z-index: -1;
+}
+
+.demo-5 {
+  padding-bottom: 10px;
+  /* 使文字居中 因为下方多出10px的阴影 */
+  border-radius: 10px;
+  border: 5px solid #666;
+  background: #e7c51b;
+  box-shadow: 0 -5px 0px 0px #999 inset, 0 -10px 0px 0px #333 inset;
+}
+
+.demo-6 {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, transparent 38.5%, #09c 38.6%);
+}
+
+.demo-6::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: -40px;
+  width: 250px;
+  height: 90px;
+  border-radius: 100%;
+  box-shadow: inset 0 15px 0 13px #09c, -19px -12px 0 -10px #fff;
+  border: 1px solid #09c;
+  transform: rotate(332deg);
+}
+
+.demo-6::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 61.4%;
+  height: 25px;
+  background: #09c;
+  transform: translate(-50%, -50%);
+  box-shadow: 100px 25px 0 0 #fff;
+}
+
+.demo-7>p {
+  transition: .3s;
+
+}
+
+.demo-7>p:hover {
+  text-shadow: 0 0 10px #09c, 0 0 20px #09c, 0 0 30px #09c, 0 0 50px #09c, 0 0 80px #09c;
+}
+
+.demo-8>p {
+  animation: textShadowShake 2s linear infinite;
+}
+
+.demo-8>p:nth-child(2) {
+  animation-delay: .4s;
+}
+
+.demo-8>p:nth-child(3) {
+  animation-delay: .8s;
+}
+
+.demo-8>p:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.demo-8>p:nth-child(5) {
+  animation-delay: 1.6s;
+}
+
+@keyframes textShadowShake {
+  0%, 100% {
+    text-shadow: none;
+  }
+
+  50%,
+  70% {
+    text-shadow: 0 0 10px #09c, 0 0 20px #09c, 0 0 30px #09c, 0 0 50px #09c, 0 0 80px #09c;
+  }
+}

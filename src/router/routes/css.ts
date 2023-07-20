@@ -52,6 +52,14 @@ const route: MenuRoute = {
       meta: {
         title: 'clip-path'
       }
+    },
+    {
+      path: 'shadow',
+      name: 'CssShadow',
+      component: () => import('@/pages/css-demo/shadow/index.vue'),
+      meta: {
+        title: 'css-阴影'
+      }
     }
   ]
 }
